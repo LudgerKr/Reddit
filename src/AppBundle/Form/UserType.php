@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\SubmitButton;
@@ -17,8 +18,9 @@ class UserType extends AbstractType
     {
         $builder->add('username')
                 ->add('email')
-                ->add('password')
-                ->add('repeatpassword')
+                ->add('password',RepeatedType::class, [
+                    'first_options'  => ['label' => 'Password'],
+                    'second_options' => ['label' => 'Repeat Password']])
                 ->add('Inscription', SubmitType::class);
     }/**
      * {@inheritdoc}

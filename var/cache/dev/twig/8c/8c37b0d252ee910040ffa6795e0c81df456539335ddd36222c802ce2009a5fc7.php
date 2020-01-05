@@ -77,9 +77,8 @@ class __TwigTemplate_45237f423eb19c58148c8c7faadd090c9f9eebbd837cb512c0821c42136
 
         // line 6
         echo "    <h1>Inscription sur le site</h1>
-
     ";
-        // line 8
+        // line 7
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form');
         echo "
 ";
@@ -103,7 +102,7 @@ class __TwigTemplate_45237f423eb19c58148c8c7faadd090c9f9eebbd837cb512c0821c42136
 
     public function getDebugInfo()
     {
-        return array (  83 => 8,  79 => 6,  70 => 5,  52 => 3,  30 => 1,);
+        return array (  82 => 7,  79 => 6,  70 => 5,  52 => 3,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -122,7 +121,6 @@ class __TwigTemplate_45237f423eb19c58148c8c7faadd090c9f9eebbd837cb512c0821c42136
 
 {% block body %}
     <h1>Inscription sur le site</h1>
-
     {{ form (form) }}
 {% endblock %}", "security/signup.html.twig", "/home/ludger/Project/Reddit/app/Resources/views/security/signup.html.twig");
     }
