@@ -3,6 +3,25 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1>Inscription sur le site</h1>
-    {{ form (form) }}
+    {{ form_start(form) }}
+    <div align="center">
+            <legend>Inscription</legend>
+            <div class="form-group">
+                <label for="inputUsername" class="col-lg-2 control-label">{{ form_row(form.username) }}</label>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">{{ form_row(form.email) }}</label>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">{{ form_row(form.password.first) }}</label>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">{{ form_row(form.password.second) }}</label>
+            </div>
+            <div>
+                <button type="reset" class="btn btn-info">Cancel</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+    </div>
+    {{ form_end(form) }}
 {% endblock %}

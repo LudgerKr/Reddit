@@ -122,9 +122,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_home:
 
-        // signup
-        if ('/signup' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::signUpAction',  '_route' => 'signup',);
+        if (0 === strpos($pathinfo, '/signup')) {
+            // signup
+            if ('/signup' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::signUpAction',  '_route' => 'signup',);
+            }
+
+            // user_registration
+            if ('/signup' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::signupAction',  '_route' => 'user_registration',);
+            }
+
         }
 
         // login

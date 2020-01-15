@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,10 +20,14 @@ class UserType extends AbstractType
         $builder->add('username')
                 ->add('email')
                 ->add('password',RepeatedType::class, [
+                    'type' => PasswordType::class,
                     'first_options'  => ['label' => 'Password'],
-                    'second_options' => ['label' => 'Repeat Password']])
-                ->add('Inscription', SubmitType::class);
-    }/**
+                    'second_options' => ['label' => 'Repeat Password'],
+                    'invalid_message'   => 'Les mots de passe ne sont pas identiques',
+                ]);
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
