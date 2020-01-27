@@ -1,28 +1,40 @@
 # To get started with security, check out the documentation:
-# https://symfony.com/doc/current/security.html
+# http://symfony.com/doc/current/security.html
 security:
-    encoders:
-        AppBundle\Entity\User: bcrypt
+  encoders:
+    # Our user class and the algorithm we'll use to encode passwords
+    # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
+    AppBundle\Entity\User:
+      algorithm: 'bcrypt'
+      cost:      15
 
-    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
-    providers:
-        in_memory:
-            memory: ~
+  # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+  providers:
+      db_provider:
+        entity:
+            class: AppBundle:User
 
-    firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+  firewalls:
+    # disables authentication for assets and the profiler, adapt it according to your needs
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
-            form_login:
-                    login_path: login
-                    check_path: login
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
-
-            # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+    main:
+      # but the firewall does not require login on every page
+      # denying access is done in access_control or in your controllers
+      anonymous: ~
+      # This allows the user to login by submitting a username and password
+      # Reference: http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+      form_login:
+        username_parameter: email
+        # The route name that the login form submits to
+        # The name of the route where the login form lives
+        # When the user tries to access a protected page, they are redirected here
+        login_path: login
+        check_path: login
+      logout:
+        # The route name the user can go to in order to logout
+        path: /logout
+        # The name of the route to redirect to after logging out
+        target: /

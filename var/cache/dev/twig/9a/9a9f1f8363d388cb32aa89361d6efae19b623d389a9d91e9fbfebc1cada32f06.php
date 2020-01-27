@@ -48,7 +48,7 @@ class __TwigTemplate_0b68fca52aa7509358a71c1fb1b40899fb1b5e3c5ac026d6f7e99199c5b
 
     }
 
-    // line 3
+    // line 2
     public function block_title($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -57,7 +57,8 @@ class __TwigTemplate_0b68fca52aa7509358a71c1fb1b40899fb1b5e3c5ac026d6f7e99199c5b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Connexion";
+        $this->displayParentBlock("title", $context, $blocks);
+        echo "-Login";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -66,7 +67,7 @@ class __TwigTemplate_0b68fca52aa7509358a71c1fb1b40899fb1b5e3c5ac026d6f7e99199c5b
 
     }
 
-    // line 5
+    // line 3
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -75,44 +76,63 @@ class __TwigTemplate_0b68fca52aa7509358a71c1fb1b40899fb1b5e3c5ac026d6f7e99199c5b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Connexion sur le site</h1>
-
-    ";
-        // line 9
-        echo "    ";
-        // line 10
-        echo "
-    ";
-        // line 11
-        if (($context["error"] ?? $this->getContext($context, "error"))) {
-            // line 12
-            echo "        <div>";
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans($this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageKey", []), $this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageData", []), "security"), "html", null, true);
-            echo "</div>
-    ";
-        }
-        // line 14
-        echo "
-    <form action=\"";
-        // line 15
+        // line 4
+        echo "    <form action=\"";
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("login");
         echo "\" method=\"post\">
-        <label for=\"username\">Username:</label>
-        <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 17
-        echo twig_escape_filter($this->env, ($context["last_username"] ?? $this->getContext($context, "last_username")), "html", null, true);
-        echo "\"/>
-
-        <label for=\"password\">Password:</label>
-        <input type=\"password\" id=\"password\" name=\"_password\"/>
-
         ";
-        // line 27
+        // line 5
+        if (($context["error"] ?? $this->getContext($context, "error"))) {
+            // line 6
+            echo "            <div class=\"alert alert-danger\">
+                ";
+            // line 7
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context, ($context["error"] ?? $this->getContext($context, "error")));
+            echo "
+                ";
+            // line 8
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans($this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageKey", []), $this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageData", []), "security"), "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        // line 11
         echo "
-        <button type=\"submit\">login</button>
-    </form>
+        <div class=\"row\">
+            <div class=\"col-sm-5\">
+                <div class=\"well\">
+                    <fieldset>
+                        <legend><i class=\"fa fa-lock\" aria-hidden=\"true\"></i> Login</legend>
+                        <div class=\"form-group\">
+                            <label for=\"email\">Email Address</label>
+                            <input type=\"email\" id=\"email\" name=\"email\" value=\"";
+        // line 19
+        echo twig_escape_filter($this->env, ($context["last_username"] ?? $this->getContext($context, "last_username")), "html", null, true);
+        echo "\" />
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"password\">Password:</label>
+                            <input type=\"password\" id=\"password\" name=\"_password\" />
+                        </div>
+                        <div class=\"row\">
+                            <div class=\"col-md-6\">
+                                <button type=\"submit\" class=\"btn btn-primary\">
+                                    <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter
+                                </button>
+                            </div>
+                            <div class=\"col-md-6\">
+                                <a class=\"btn btn-danger\" href=\"";
+        // line 32
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("signup");
+        echo "\">S'inscrire</a>
+                            </div>
+                        </div>
 
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </form>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -134,7 +154,7 @@ class __TwigTemplate_0b68fca52aa7509358a71c1fb1b40899fb1b5e3c5ac026d6f7e99199c5b
 
     public function getDebugInfo()
     {
-        return array (  112 => 27,  104 => 17,  99 => 15,  96 => 14,  90 => 12,  88 => 11,  85 => 10,  83 => 9,  79 => 6,  70 => 5,  52 => 3,  30 => 1,);
+        return array (  126 => 32,  110 => 19,  100 => 11,  94 => 8,  90 => 7,  87 => 6,  85 => 5,  80 => 4,  71 => 3,  52 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -148,35 +168,45 @@ class __TwigTemplate_0b68fca52aa7509358a71c1fb1b40899fb1b5e3c5ac026d6f7e99199c5b
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-
-{% block title %}Connexion{% endblock %}
-
+{% block title %}{{ parent() }}-Login{% endblock %}
 {% block body %}
-    <h1>Connexion sur le site</h1>
-
-    {# app/Resources/views/security/login.html.twig #}
-    {# ... you will probably extend your base template, like base.html.twig #}
-
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
     <form action=\"{{ path('login') }}\" method=\"post\">
-        <label for=\"username\">Username:</label>
-        <input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\"/>
+        {% if error %}
+            <div class=\"alert alert-danger\">
+                {{ dump(error) }}
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
 
-        <label for=\"password\">Password:</label>
-        <input type=\"password\" id=\"password\" name=\"_password\"/>
+        <div class=\"row\">
+            <div class=\"col-sm-5\">
+                <div class=\"well\">
+                    <fieldset>
+                        <legend><i class=\"fa fa-lock\" aria-hidden=\"true\"></i> Login</legend>
+                        <div class=\"form-group\">
+                            <label for=\"email\">Email Address</label>
+                            <input type=\"email\" id=\"email\" name=\"email\" value=\"{{ last_username }}\" />
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"password\">Password:</label>
+                            <input type=\"password\" id=\"password\" name=\"_password\" />
+                        </div>
+                        <div class=\"row\">
+                            <div class=\"col-md-6\">
+                                <button type=\"submit\" class=\"btn btn-primary\">
+                                    <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter
+                                </button>
+                            </div>
+                            <div class=\"col-md-6\">
+                                <a class=\"btn btn-danger\" href=\"{{ path('signup') }}\">S'inscrire</a>
+                            </div>
+                        </div>
 
-        {#
-            If you want to control the URL the user
-            is redirected to on success (more details below)
-            <input type=\"hidden\" name=\"_target_path\" value=\"/account\"/>
-        #}
-
-        <button type=\"submit\">login</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
     </form>
-
 {% endblock %}", "security/login.html.twig", "/Users/dev09/Desktop/Reddit/app/Resources/views/security/login.html.twig");
     }
 }

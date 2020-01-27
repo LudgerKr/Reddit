@@ -97,7 +97,10 @@ class __TwigTemplate_92f29fae98d647c4b64438a394e79db5fe06717377bcb338de4697323c0
         } else {
             // line 36
             echo "                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Diconnect</a>
+                    <a class=\"nav-link\" href=\"";
+            // line 37
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("logout");
+            echo "\">LOG OUT</a>
                 </li>
             ";
         }
@@ -207,7 +210,7 @@ class __TwigTemplate_92f29fae98d647c4b64438a394e79db5fe06717377bcb338de4697323c0
 
     public function getDebugInfo()
     {
-        return array (  182 => 46,  165 => 44,  148 => 8,  130 => 5,  118 => 47,  116 => 46,  113 => 45,  111 => 44,  105 => 40,  99 => 36,  93 => 33,  87 => 30,  84 => 29,  81 => 28,  75 => 24,  73 => 23,  59 => 12,  54 => 9,  52 => 8,  46 => 5,  40 => 1,);
+        return array (  185 => 46,  168 => 44,  151 => 8,  133 => 5,  121 => 47,  119 => 46,  116 => 45,  114 => 44,  108 => 40,  102 => 37,  99 => 36,  93 => 33,  87 => 30,  84 => 29,  81 => 28,  75 => 24,  73 => 23,  59 => 12,  54 => 9,  52 => 8,  46 => 5,  40 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -256,7 +259,7 @@ class __TwigTemplate_92f29fae98d647c4b64438a394e79db5fe06717377bcb338de4697323c0
                 </li>
             {%  else %}
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Diconnect</a>
+                    <a class=\"nav-link\" href=\"{{ path('logout') }}\">LOG OUT</a>
                 </li>
             {% endif %}
         </ul>

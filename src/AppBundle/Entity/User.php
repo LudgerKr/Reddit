@@ -27,7 +27,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255, unique=true)
+     * @ORM\Column(name="username", type="string", length=255)
      */
     private $username;
 
@@ -41,7 +41,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=255, unique=true)
+     * @ORM\Column(name="password", type="string")
      */
     private $password;
 
