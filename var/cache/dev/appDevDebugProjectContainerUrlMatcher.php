@@ -107,6 +107,47 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/article')) {
+            if (0 === strpos($pathinfo, '/article_')) {
+                // article_list
+                if ('/article_list' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ArticleController::listArticleAction',  '_route' => 'article_list',);
+                }
+
+                // article_create
+                if ('/article_create' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ArticleController::createArticleAction',  '_route' => 'article_create',);
+                }
+
+                // article_edit
+                if (0 === strpos($pathinfo, '/article_edit') && preg_match('#^/article_edit/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'article_edit']), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::createArticleAction',));
+                }
+
+            }
+
+            // article_show
+            if (preg_match('#^/article/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'article_show']), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::showArticleAction',));
+            }
+
+            // article_delete
+            if (0 === strpos($pathinfo, '/article_delete') && preg_match('#^/article_delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'article_delete']), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::deleteArticleAction',));
+            }
+
+        }
+
+        // category_list
+        if ('/category_list' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\CategoryController::listCategoryAction',  '_route' => 'category_list',);
+        }
+
+        // category_create
+        if ('/category_create' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\CategoryController::createCategoryAction',  '_route' => 'category_create',);
+        }
+
         // home
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'home',);

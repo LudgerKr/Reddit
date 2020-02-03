@@ -102,32 +102,37 @@ class __TwigTemplate_0b68fca52aa7509358a71c1fb1b40899fb1b5e3c5ac026d6f7e99199c5b
             <div class=\"col-sm-5\">
                 <div class=\"well\">
                     <fieldset>
-                        <legend><i class=\"fa fa-lock\" aria-hidden=\"true\"></i> Login</legend>
+                        <div align=\"center\">
+                            <legend><i class=\"fa fa-lock\" aria-hidden=\"true\"></i> Login</legend>
+                        </div>
                         <div class=\"form-group\">
-                            <label for=\"email\">Email Address</label>
-                            <input type=\"email\" id=\"email\" name=\"email\" value=\"";
-        // line 19
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td><label for=\"email\">Adresse Email :</label></td>
+                                    <td><input type=\"email\" id=\"email\" name=\"email\" value=\"";
+        // line 24
         echo twig_escape_filter($this->env, ($context["last_username"] ?? $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" />
-                        </div>
-                        <div class=\"form-group\">
-                            <label for=\"password\">Password:</label>
-                            <input type=\"password\" id=\"password\" name=\"_password\" />
-                        </div>
-                        <div class=\"row\">
-                            <div class=\"col-md-6\">
-                                <button type=\"submit\" class=\"btn btn-primary\">
-                                    <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter
-                                </button>
-                            </div>
-                            <div class=\"col-md-6\">
-                                <a class=\"btn btn-danger\" href=\"";
-        // line 32
+        echo "\" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label for=\"password\">Mot de passe :</label></td>
+                                    <td><input type=\"password\" id=\"password\" name=\"_password\" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type=\"submit\" class=\"btn btn-primary\">
+                                            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter
+                                        </button>
+                                    </td>
+                                    <td><a class=\"btn btn-danger\" href=\"";
+        // line 36
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("signup");
-        echo "\">S'inscrire</a>
-                            </div>
+        echo "\">S'inscrire</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
-
                     </fieldset>
                 </div>
             </div>
@@ -154,7 +159,7 @@ class __TwigTemplate_0b68fca52aa7509358a71c1fb1b40899fb1b5e3c5ac026d6f7e99199c5b
 
     public function getDebugInfo()
     {
-        return array (  126 => 32,  110 => 19,  100 => 11,  94 => 8,  90 => 7,  87 => 6,  85 => 5,  80 => 4,  71 => 3,  52 => 2,  30 => 1,);
+        return array (  130 => 36,  115 => 24,  100 => 11,  94 => 8,  90 => 7,  87 => 6,  85 => 5,  80 => 4,  71 => 3,  52 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -182,26 +187,31 @@ class __TwigTemplate_0b68fca52aa7509358a71c1fb1b40899fb1b5e3c5ac026d6f7e99199c5b
             <div class=\"col-sm-5\">
                 <div class=\"well\">
                     <fieldset>
-                        <legend><i class=\"fa fa-lock\" aria-hidden=\"true\"></i> Login</legend>
-                        <div class=\"form-group\">
-                            <label for=\"email\">Email Address</label>
-                            <input type=\"email\" id=\"email\" name=\"email\" value=\"{{ last_username }}\" />
+                        <div align=\"center\">
+                            <legend><i class=\"fa fa-lock\" aria-hidden=\"true\"></i> Login</legend>
                         </div>
                         <div class=\"form-group\">
-                            <label for=\"password\">Password:</label>
-                            <input type=\"password\" id=\"password\" name=\"_password\" />
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td><label for=\"email\">Adresse Email :</label></td>
+                                    <td><input type=\"email\" id=\"email\" name=\"email\" value=\"{{ last_username }}\" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label for=\"password\">Mot de passe :</label></td>
+                                    <td><input type=\"password\" id=\"password\" name=\"_password\" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type=\"submit\" class=\"btn btn-primary\">
+                                            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter
+                                        </button>
+                                    </td>
+                                    <td><a class=\"btn btn-danger\" href=\"{{ path('signup') }}\">S'inscrire</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class=\"row\">
-                            <div class=\"col-md-6\">
-                                <button type=\"submit\" class=\"btn btn-primary\">
-                                    <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter
-                                </button>
-                            </div>
-                            <div class=\"col-md-6\">
-                                <a class=\"btn btn-danger\" href=\"{{ path('signup') }}\">S'inscrire</a>
-                            </div>
-                        </div>
-
                     </fieldset>
                 </div>
             </div>

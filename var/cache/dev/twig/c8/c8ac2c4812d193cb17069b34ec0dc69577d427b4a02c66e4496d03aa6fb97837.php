@@ -68,56 +68,71 @@ class __TwigTemplate_92f29fae98d647c4b64438a394e79db5fe06717377bcb338de4697323c0
                 <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
                 <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
             </form>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"";
+        // line 24
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("article_list");
+        echo "\">Articles</a>
+            </li>
             ";
-        // line 23
+        // line 26
         if ($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", [])) {
-            // line 24
+            // line 27
             echo "                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Créer un article</a>
+                    <a class=\"nav-link\" href=\"";
+            // line 28
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("article_create");
+            echo "\">Créer un article</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+            // line 31
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("category_create");
+            echo "\">Créer une catégorie</a>
                 </li>
             ";
         }
-        // line 28
+        // line 34
         echo "            ";
         if ( !$this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", [])) {
-            // line 29
+            // line 35
             echo "                <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-            // line 30
+            // line 36
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("login");
             echo "\">LOG IN</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-            // line 33
+            // line 39
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("signup");
             echo "\">SIGN UP</a>
                 </li>
             ";
         } else {
-            // line 36
+            // line 42
             echo "                <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-            // line 37
+            // line 43
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("logout");
             echo "\">LOG OUT</a>
                 </li>
             ";
         }
-        // line 40
+        // line 46
         echo "        </ul>
     </div>
 </nav>
 <div class=\"container\">
     ";
-        // line 44
+        // line 50
         $this->displayBlock('body', $context, $blocks);
-        // line 45
+        // line 51
         echo "</div>
 ";
-        // line 46
+        // line 52
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 47
+        // line 53
         echo "</body>
 </html>
 ";
@@ -164,7 +179,7 @@ class __TwigTemplate_92f29fae98d647c4b64438a394e79db5fe06717377bcb338de4697323c0
 
     }
 
-    // line 44
+    // line 50
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -181,7 +196,7 @@ class __TwigTemplate_92f29fae98d647c4b64438a394e79db5fe06717377bcb338de4697323c0
 
     }
 
-    // line 46
+    // line 52
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -210,7 +225,7 @@ class __TwigTemplate_92f29fae98d647c4b64438a394e79db5fe06717377bcb338de4697323c0
 
     public function getDebugInfo()
     {
-        return array (  185 => 46,  168 => 44,  151 => 8,  133 => 5,  121 => 47,  119 => 46,  116 => 45,  114 => 44,  108 => 40,  102 => 37,  99 => 36,  93 => 33,  87 => 30,  84 => 29,  81 => 28,  75 => 24,  73 => 23,  59 => 12,  54 => 9,  52 => 8,  46 => 5,  40 => 1,);
+        return array (  200 => 52,  183 => 50,  166 => 8,  148 => 5,  136 => 53,  134 => 52,  131 => 51,  129 => 50,  123 => 46,  117 => 43,  114 => 42,  108 => 39,  102 => 36,  99 => 35,  96 => 34,  90 => 31,  84 => 28,  81 => 27,  79 => 26,  74 => 24,  59 => 12,  54 => 9,  52 => 8,  46 => 5,  40 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -245,9 +260,15 @@ class __TwigTemplate_92f29fae98d647c4b64438a394e79db5fe06717377bcb338de4697323c0
                 <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
                 <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
             </form>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"{{ path('article_list') }}\">Articles</a>
+            </li>
             {%  if app.user %}
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Créer un article</a>
+                    <a class=\"nav-link\" href=\"{{ path('article_create') }}\">Créer un article</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{ path('category_create') }}\">Créer une catégorie</a>
                 </li>
             {%  endif %}
             {% if not app.user %}

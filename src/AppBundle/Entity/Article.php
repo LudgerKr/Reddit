@@ -6,9 +6,13 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticleRepository")
+ * @UniqueEntity("title",
+ *     message="Ce titre d'article est déjà existant."
+ * )
  */
 class Article
 {
@@ -21,9 +25,16 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min=5, max=255)
+     * @Assert\Length(min=3, max=255)
      */
     private $title;
+
+    /**
+     * @var $author
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=5, max=255)
+     */
+    private $author;
 
     /**
      * @ORM\Column(type="text")
@@ -73,6 +84,22 @@ class Article
         $this->title = $title;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param mixed $author
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
     }
 
     public function getContent(): ?string

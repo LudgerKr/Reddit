@@ -38,6 +38,9 @@ class __TwigTemplate_1c535f04e7a5c7b243bd0f67555546058d265c207775bdbeb4ac21c3547
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "security/signup.html.twig"));
 
+        // line 5
+        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme(($context["formUser"] ?? $this->getContext($context, "formUser")), [0 => "bootstrap_4_layout.html.twig"], true);
+        // line 1
         $this->parent = $this->loadTemplate("base.html.twig", "security/signup.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -66,7 +69,7 @@ class __TwigTemplate_1c535f04e7a5c7b243bd0f67555546058d265c207775bdbeb4ac21c3547
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -75,45 +78,33 @@ class __TwigTemplate_1c535f04e7a5c7b243bd0f67555546058d265c207775bdbeb4ac21c3547
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 8
         echo "    ";
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["formUser"] ?? $this->getContext($context, "formUser")), 'form_start');
         echo "
-    <div align=\"center\">
-            <legend>Inscription</legend>
-            <div class=\"form-group\">
-                <label for=\"inputUsername\" class=\"col-lg-2 control-label\">";
-        // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "username", []), 'row');
-        echo "</label>
-            </div>
-            <div class=\"form-group\">
-                <label for=\"inputEmail\" class=\"col-lg-2 control-label\">";
-        // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'row');
-        echo "</label>
-            </div>
-            <div class=\"form-group\">
-                <label for=\"inputEmail\" class=\"col-lg-2 control-label\">";
-        // line 16
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", []), "first", []), 'row');
-        echo "</label>
-            </div>
-            <div class=\"form-group\">
-                <label for=\"inputEmail\" class=\"col-lg-2 control-label\">";
-        // line 19
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", []), "second", []), 'row');
-        echo "</label>
-            </div>
-            <div>
-                <button type=\"reset\" class=\"btn btn-info\">Cancel</button>
-                <button type=\"submit\" class=\"btn btn-success\">Submit</button>
-            </div>
-    </div>
     ";
-        // line 26
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
+        // line 9
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["formUser"] ?? $this->getContext($context, "formUser")), "username", []), 'row');
         echo "
+    ";
+        // line 10
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["formUser"] ?? $this->getContext($context, "formUser")), "email", []), 'row');
+        echo "
+    ";
+        // line 11
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["formUser"] ?? $this->getContext($context, "formUser")), "password", []), "first", []), 'row');
+        echo "
+    ";
+        // line 12
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["formUser"] ?? $this->getContext($context, "formUser")), "password", []), "second", []), 'row');
+        echo "
+    <button type=\"reset\" class=\"btn btn-info\">Cancel</button>
+    <button type=\"submit\" class=\"btn btn-success\">Submit</button>
+    ";
+        // line 15
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["formUser"] ?? $this->getContext($context, "formUser")), 'form_end');
+        echo "
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -135,7 +126,7 @@ class __TwigTemplate_1c535f04e7a5c7b243bd0f67555546058d265c207775bdbeb4ac21c3547
 
     public function getDebugInfo()
     {
-        return array (  115 => 26,  105 => 19,  99 => 16,  93 => 13,  87 => 10,  79 => 6,  70 => 5,  52 => 3,  30 => 1,);
+        return array (  105 => 15,  99 => 12,  95 => 11,  91 => 10,  87 => 9,  82 => 8,  73 => 7,  55 => 3,  44 => 1,  42 => 5,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -152,28 +143,18 @@ class __TwigTemplate_1c535f04e7a5c7b243bd0f67555546058d265c207775bdbeb4ac21c3547
 
 {% block title %}Inscription{% endblock %}
 
+{% form_theme formUser 'bootstrap_4_layout.html.twig' %}
+
 {% block body %}
-    {{ form_start(form) }}
-    <div align=\"center\">
-            <legend>Inscription</legend>
-            <div class=\"form-group\">
-                <label for=\"inputUsername\" class=\"col-lg-2 control-label\">{{ form_row(form.username) }}</label>
-            </div>
-            <div class=\"form-group\">
-                <label for=\"inputEmail\" class=\"col-lg-2 control-label\">{{ form_row(form.email) }}</label>
-            </div>
-            <div class=\"form-group\">
-                <label for=\"inputEmail\" class=\"col-lg-2 control-label\">{{ form_row(form.password.first) }}</label>
-            </div>
-            <div class=\"form-group\">
-                <label for=\"inputEmail\" class=\"col-lg-2 control-label\">{{ form_row(form.password.second) }}</label>
-            </div>
-            <div>
-                <button type=\"reset\" class=\"btn btn-info\">Cancel</button>
-                <button type=\"submit\" class=\"btn btn-success\">Submit</button>
-            </div>
-    </div>
-    {{ form_end(form) }}
+    {{ form_start(formUser) }}
+    {{ form_row(formUser.username) }}
+    {{ form_row(formUser.email) }}
+    {{ form_row(formUser.password.first) }}
+    {{ form_row(formUser.password.second) }}
+    <button type=\"reset\" class=\"btn btn-info\">Cancel</button>
+    <button type=\"submit\" class=\"btn btn-success\">Submit</button>
+    {{ form_end(formUser) }}
+
 {% endblock %}", "security/signup.html.twig", "/Users/dev09/Desktop/Reddit/app/Resources/views/security/signup.html.twig");
     }
 }

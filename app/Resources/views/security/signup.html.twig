@@ -2,26 +2,16 @@
 
 {% block title %}Inscription{% endblock %}
 
+{% form_theme formUser 'bootstrap_4_layout.html.twig' %}
+
 {% block body %}
-    {{ form_start(form) }}
-    <div align="center">
-            <legend>Inscription</legend>
-            <div class="form-group">
-                <label for="inputUsername" class="col-lg-2 control-label">{{ form_row(form.username) }}</label>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">{{ form_row(form.email) }}</label>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">{{ form_row(form.password.first) }}</label>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">{{ form_row(form.password.second) }}</label>
-            </div>
-            <div>
-                <button type="reset" class="btn btn-info">Cancel</button>
-                <button type="submit" class="btn btn-success">Submit</button>
-            </div>
-    </div>
-    {{ form_end(form) }}
+    {{ form_start(formUser) }}
+    {{ form_row(formUser.username) }}
+    {{ form_row(formUser.email) }}
+    {{ form_row(formUser.password.first) }}
+    {{ form_row(formUser.password.second) }}
+    <button type="reset" class="btn btn-info">Cancel</button>
+    <button type="submit" class="btn btn-success">Submit</button>
+    {{ form_end(formUser) }}
+
 {% endblock %}
