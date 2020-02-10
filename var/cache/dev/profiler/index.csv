@@ -63,3 +63,10 @@ a8530a,127.0.0.1,POST,http://localhost:8000/login,1581335606,,302
 62bb14,127.0.0.1,GET,http://localhost:8000/,1581335606,,200
 5a372b,127.0.0.1,GET,http://localhost:8000/article_list,1581335607,,200
 f66e6e,127.0.0.1,GET,http://localhost:8000/article/8,1581335608,,200
+6e6325,127.0.0.1,GET,http://localhost:8000/comment_delete/7,1581335659,,302
+44d7f1,127.0.0.1,GET,http://localhost:8000/article/8,1581335659,,200
+df32d2,127.0.0.1,GET,http://localhost:8000/article_list,1581335661,,200
+055b38,127.0.0.1,GET,http://localhost:8000/article/9,1581335663,,200
+4c5f30,127.0.0.1,GET,http://localhost:8000/article_list,1581335768,767ffa,200
+767ffa,127.0.0.1,GET,http://localhost:8000/article_list,1581335768,,500
+1421ef,127.0.0.1,GET,http://localhost:8000/article_list,1581335782,,200
