@@ -58,7 +58,7 @@ class TemplateNameParserTest extends TestCase
     {
         return [
             ['FooBundle:Post:index.html.php', 'FooBundle:Post:index.html.php', '@FooBundle/Resources/views/Post/index.html.php', new TemplateReference('FooBundle', 'Post', 'index', 'html', 'php')],
-            ['FooBundle:Post:create.html.twig', 'FooBundle:Post:create.html.twig', '@FooBundle/Resources/views/Post/create.html.twig', new TemplateReference('FooBundle', 'Post', 'index', 'html', 'twig')],
+            ['FooBundle:Post:index.html.twig', 'FooBundle:Post:index.html.twig', '@FooBundle/Resources/views/Post/index.html.twig', new TemplateReference('FooBundle', 'Post', 'index', 'html', 'twig')],
             ['FooBundle:Post:index.xml.php', 'FooBundle:Post:index.xml.php', '@FooBundle/Resources/views/Post/index.xml.php', new TemplateReference('FooBundle', 'Post', 'index', 'xml', 'php')],
             ['SensioFooBundle:Post:index.html.php', 'SensioFooBundle:Post:index.html.php', '@SensioFooBundle/Resources/views/Post/index.html.php', new TemplateReference('SensioFooBundle', 'Post', 'index', 'html', 'php')],
             ['SensioCmsFooBundle:Post:index.html.php', 'SensioCmsFooBundle:Post:index.html.php', '@SensioCmsFooBundle/Resources/views/Post/index.html.php', new TemplateReference('SensioCmsFooBundle', 'Post', 'index', 'html', 'php')],
@@ -98,8 +98,8 @@ class TemplateNameParserTest extends TestCase
     {
         return [
             ['/path/to/section/index.html.php', '/path/to/section/index.html.php', '/path/to/section/index.html.php', new BaseTemplateReference('/path/to/section/index.html.php', 'php')],
-            ['C:\\path\\to\\section\\name.html.php', 'C:path/to/section/name.html.php', 'C:path/to/section/name.html.php', new BaseTemplateReference('C:path/to/section/name.html.php', 'php')],
-            ['C:\\path\\to\\section\\name:foo.html.php', 'C:path/to/section/name:foo.html.php', 'C:path/to/section/name:foo.html.php', new BaseTemplateReference('C:path/to/section/name:foo.html.php', 'php')],
+            ['C:\\path\\to\\section\\name.html.php', 'C:/path/to/section/name.html.php', 'C:/path/to/section/name.html.php', new BaseTemplateReference('C:/path/to/section/name.html.php', 'php')],
+            ['C:\\path\\to\\section\\name:foo.html.php', 'C:/path/to/section/name:foo.html.php', 'C:/path/to/section/name:foo.html.php', new BaseTemplateReference('C:/path/to/section/name:foo.html.php', 'php')],
             ['\\path\\to\\section\\name.html.php', '/path/to/section/name.html.php', '/path/to/section/name.html.php', new BaseTemplateReference('/path/to/section/name.html.php', 'php')],
             ['/path/to/section/name.php', '/path/to/section/name.php', '/path/to/section/name.php', new BaseTemplateReference('/path/to/section/name.php', 'php')],
         ];

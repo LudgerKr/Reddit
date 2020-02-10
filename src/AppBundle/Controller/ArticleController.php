@@ -6,12 +6,12 @@ use AppBundle\Entity\Article;
 use AppBundle\Entity\Comment;
 use AppBundle\Form\ArticleType;
 use AppBundle\Form\CommentType;
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\ORM\EntityManager;
+use AppBundle\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Authorization\AutorizationChecker;
 
 class ArticleController extends Controller
 {
@@ -76,12 +76,13 @@ class ArticleController extends Controller
         if($form->isValid() && $form->isSubmitted()) {
             $comment->setCreatedAt(new \DateTime());
             $comment->setAuthor($user->getUsername());
+            $comment->setArticle($article);
 
-            $em = $this->getDoctrine()->getManager(Comment::class);
+            $em = $this->getDoctrine()->getManager();
             $em->persist($comment);
             $em->flush();
 
-            return $this->redirect("article_show", ['id' => $article->getId()]);
+            return $this->redirectToRoute('article_show', ['id' => $article->getId()]);
         }
 
         return $this->render('article/show.html.twig', [
@@ -105,5 +106,19 @@ class ArticleController extends Controller
         $em->flush();
 
         return $this->redirect($this->generateUrl('article_list'));
+    }
+
+    /**
+     * @param Article $article
+     * @param Comment $comment
+     * @Route ("/comment_delete/{id}", name="comment_delete")
+     */
+    public function deleteCommentAction(Comment $comment)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($comment);
+        $em->flush();
+
+        return $this->redirectToRoute('article_show', ['id' => $comment->getArticle()->getId()]);
     }
 }

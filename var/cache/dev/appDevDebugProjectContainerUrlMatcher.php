@@ -138,14 +138,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // category_list
-        if ('/category_list' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\CategoryController::listCategoryAction',  '_route' => 'category_list',);
-        }
+        elseif (0 === strpos($pathinfo, '/c')) {
+            // comment_delete
+            if (0 === strpos($pathinfo, '/comment_delete') && preg_match('#^/comment_delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'comment_delete']), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::deleteCommentAction',));
+            }
 
-        // category_create
-        if ('/category_create' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\CategoryController::createCategoryAction',  '_route' => 'category_create',);
+            // category_list
+            if ('/category_list' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\CategoryController::listCategoryAction',  '_route' => 'category_list',);
+            }
+
+            // category_create
+            if ('/category_create' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\CategoryController::createCategoryAction',  '_route' => 'category_create',);
+            }
+
         }
 
         // home

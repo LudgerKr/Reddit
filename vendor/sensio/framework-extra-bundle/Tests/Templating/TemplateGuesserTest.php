@@ -32,7 +32,7 @@ class TemplateGuesserTest extends \PHPUnit\Framework\TestCase
         $this->kernel
             ->expects($this->once())
             ->method('getBundles')
-            ->will($this->returnValue(array_values($this->bundles)));
+            ->willReturn(array_values($this->bundles));
     }
 
     public function testGuessTemplateName()
@@ -47,7 +47,7 @@ class TemplateGuesserTest extends \PHPUnit\Framework\TestCase
             'indexAction',
         ], new Request());
 
-        $this->assertEquals('@Foo/foo/create.html.twig', (string) $templateReference);
+        $this->assertEquals('@Foo/foo/index.html.twig', (string) $templateReference);
     }
 
     public function testGuessTemplateWithoutBundle()
@@ -58,7 +58,7 @@ class TemplateGuesserTest extends \PHPUnit\Framework\TestCase
             'indexAction',
         ], new Request());
 
-        $this->assertEquals('my_admin/out_of_bundle/create.html.twig', (string) $templateReference);
+        $this->assertEquals('my_admin/out_of_bundle/index.html.twig', (string) $templateReference);
     }
 
     public function testGuessTemplateWithSubNamespace()
@@ -99,7 +99,7 @@ class TemplateGuesserTest extends \PHPUnit\Framework\TestCase
             'indexAction',
         ], new Request());
 
-        $this->assertEquals('@Foo/foo/create.html.twig', (string) $templateReference);
+        $this->assertEquals('@Foo/foo/index.html.twig', (string) $templateReference);
     }
 
     /**
@@ -159,12 +159,12 @@ class TemplateGuesserTest extends \PHPUnit\Framework\TestCase
         $bundle
             ->expects($this->any())
             ->method('getName')
-            ->will($this->returnValue($name));
+            ->willReturn($name);
 
         $bundle
             ->expects($this->any())
             ->method('getNamespace')
-            ->will($this->returnValue($namespace));
+            ->willReturn($namespace);
 
         return $bundle;
     }

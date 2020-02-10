@@ -87,7 +87,7 @@ class Article
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAuthor()
     {
@@ -95,7 +95,7 @@ class Article
     }
 
     /**
-     * @param mixed $author
+     * @param string $author
      */
     public function setAuthor($author)
     {
@@ -179,5 +179,9 @@ class Article
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->title;
     }
 }

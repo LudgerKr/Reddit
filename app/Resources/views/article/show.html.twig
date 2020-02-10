@@ -2,6 +2,8 @@
 
 {% block title %}{{ article.title }}{% endblock %}
 
+{% form_theme commentForm  'bootstrap_4_layout.html.twig'  %}
+
 {% block body %}
 
     <article>
@@ -21,6 +23,7 @@
                 <div class="row">
                     <div class="col-3">
                         {{ comment.author }} <small>{{ comment.createdAt | date('(d/m/Y à H:i)') }}</small>
+                        <a href="{{ path('comment_delete', {'id': comment.id}) }}" class="btn btn-danger">Supprimer</a>
                     </div>
                     <div class="col">
                         {{ comment.content | raw }}
@@ -31,16 +34,14 @@
 
         {%  if app.user %}
             {{ form_start(commentForm) }}
-            {{ form_row(commentForm.author, {'attr': {placeholder: "Votre nom" }}) }}
             {{ form_row(commentForm.content, {'attr': {placeholder: "Votre commentaire" }}) }}
-
             <button type="submit" class="btn btn-success">Commenter</button>
             {{ form_end(commentForm) }}
 
         {% else %}
             <h2>Vous ne pouvez pas commenter si vous n'êtes pas connecté</h2>
-            <a href="{{ path('security_registration') }}" class="btn btn-primary">Inscription</a>
-            <a href="{{ path('security_login') }}" class="btn btn-primary">Connexion</a>
+            <a href="{{ path('signup') }}" class="btn btn-primary">SIGN UP</a>
+            <a href="{{ path('login') }}" class="btn btn-primary">LOG IN</a>
             <p></p>
         {% endif %}
     </section>
