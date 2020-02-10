@@ -6,48 +6,50 @@
 
 {% block body %}
 
-    <article>
-        <h2>{{ article.title }}</h2>
-        <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }}
-            dans la catégorie {{ article.category.title }} par {{  article.author }}</div>
-        <div class="content">
-            <img src= "{{ article.image }}" alt="">
-            <p>{{ article.content | raw }}</p>
-        </div>
-    </article>
+    <div align="center">
+        <article>
+            <h2>{{ article.title }}</h2>
+            <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }}
+                dans la catégorie {{ article.category.title }} par {{  article.author | capitalize }}</div>
+            <div class="content">
+                <img src= "{{ article.image }}" alt="">
+                <p>{{ article.content | raw }}</p>
+            </div>
+        </article>
 
-    <section id="commentaires">
-        <h1>{{ article.comments | length }} commentaires : </h1>
-        {%  for comment in article.comments %}
-            <div class=comment">
-                <div class="row">
-                    <div class="col-3">
-                        {{ comment.author }} <small>{{ comment.createdAt | date('(d/m/Y à H:i)') }}</small>
-                        {% if app.user %}
-                            {% if comment.author == app.user.username %}
-                                <a href="{{ path('comment_delete', {'id': comment.id}) }}" class="btn btn-danger">Supprimer</a>
+        <section id="commentaires">
+            <h1>{{ article.comments | length }} commentaires : </h1>
+            {%  for comment in article.comments %}
+                <div class=comment">
+                    <div class="row">
+                        <div class="col-3">
+                            {{ comment.author }} <small>{{ comment.createdAt | date('(d/m/Y à H:i)') }}</small>
+                            {% if app.user %}
+                                {% if comment.author == app.user.username %}
+                                    <a href="{{ path('comment_delete', {'id': comment.id}) }}" class="btn btn-danger">Supprimer</a>
+                                {% endif %}
                             {% endif %}
-                        {% endif %}
-                    </div>
-                    <div class="col">
-                        {{ comment.content | raw }}
+                        </div>
+                        <div class="col">
+                            {{ comment.content | raw }}
+                        </div>
                     </div>
                 </div>
-            </div>
-        {%  endfor %}
+            {%  endfor %}
 
-        {%  if app.user %}
-            {{ form_start(commentForm) }}
-            {{ form_row(commentForm.content, {'attr': {placeholder: "Votre commentaire" }}) }}
-            <button type="submit" class="btn btn-success">Commenter</button>
-            {{ form_end(commentForm) }}
+            {%  if app.user %}
+                {{ form_start(commentForm) }}
+                {{ form_row(commentForm.content, {'attr': {placeholder: "Votre commentaire" }}) }}
+                <button type="submit" class="btn btn-success">Commenter</button>
+                {{ form_end(commentForm) }}
 
-        {% else %}
-            <h2>Vous ne pouvez pas commenter si vous n'êtes pas connecté</h2>
-            <a href="{{ path('signup') }}" class="btn btn-primary">SIGN UP</a>
-            <a href="{{ path('login') }}" class="btn btn-primary">LOG IN</a>
-            <p></p>
-        {% endif %}
-    </section>
+            {% else %}
+                <h2>Vous ne pouvez pas commenter si vous n'êtes pas connecté</h2>
+                <a href="{{ path('signup') }}" class="btn btn-primary">SIGN UP</a>
+                <a href="{{ path('login') }}" class="btn btn-primary">LOG IN</a>
+                <p></p>
+            {% endif %}
+        </section>
+    </div>
 
 {% endblock %}

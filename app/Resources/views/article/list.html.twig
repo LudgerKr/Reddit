@@ -4,27 +4,29 @@
 
 {% block body %}
 
-    <section class="articles">
-        {%  for article in articles %}
-            <article>
-                <h2>{{ article.title }}</h2>
-                <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à
-                    {{ article.createdAt | date('H:i') }} dans la catégorie {{ article.category.title }} par {{ article.author }}</div>
-                <div class="content">
-                    <img src= "{{ article.image }}" alt="">
-                    <p>{{ article.content | raw }}</p>
-                    <a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-success">Lire la suite</a>
-                    {% if app.user %}
-                        <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-info">Modifier</a>
+    <div align="center">
+        <section class="articles">
+            {%  for article in articles %}
+                <article>
+                    <h2>{{ article.title }}</h2>
+                    <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à
+                        {{ article.createdAt | date('H:i') }} dans la catégorie {{ article.category.title }} par {{ article.author }}</div>
+                    <div class="content">
+                        <img src= "{{ article.image }}" alt="">
+                        <p>{{ article.content | raw }}</p>
+                        <a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-success">Lire la suite</a>
                         {% if app.user %}
-                            {% if article.author == app.user.username %}
-                                <a href="{{ path('article_delete', {'id': article.id}) }}" class="btn btn-danger">Supprimer</a>
+                            <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-info">Modifier</a>
+                            {% if app.user %}
+                                {% if article.author == app.user.username %}
+                                    <a href="{{ path('article_delete', {'id': article.id}) }}" class="btn btn-danger">Supprimer</a>
+                                {% endif %}
                             {% endif %}
-                        {% endif %}
-                        {% endif %}
-                </div>
-                    {% endfor %}
-            </article>
-    </section>
+                            {% endif %}
+                    </div>
+                        {% endfor %}
+                </article>
+        </section>
+    </div>
 
 {% endblock %}
