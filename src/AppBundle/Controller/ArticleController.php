@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
 use AppBundle\Entity\Comment;
+use AppBundle\Entity\User;
 use AppBundle\Form\ArticleType;
 use AppBundle\Form\CommentType;
 use AppBundle\Repository\ArticleRepository;
@@ -67,15 +68,20 @@ class ArticleController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route ("/article/{id}", name="article_show")
      */
-    public function showArticleAction(Article $article, Request $request, UserInterface $user)
+    public function showArticleAction(Article $article, Request $request)
     {
+        if($this->container->get( 'security.authorization_checker' )->isGranted( 'IS_AUTHENTICATED_FULLY')) {
+            $user = $this->container->get('security.token_storage')->getToken()->getUser();
+            $username = $user->getUsername();
+        }
+
         $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
 
         $form->handleRequest($request);
         if($form->isValid() && $form->isSubmitted()) {
             $comment->setCreatedAt(new \DateTime());
-            $comment->setAuthor($user->getUsername());
+            $comment->setAuthor($username);
             $comment->setArticle($article);
 
             $em = $this->getDoctrine()->getManager();

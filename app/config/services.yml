@@ -29,8 +29,6 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
-    AppBundle\Entity\CategoryRepository:
-        tags: ['doctrine.repository_service']
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:

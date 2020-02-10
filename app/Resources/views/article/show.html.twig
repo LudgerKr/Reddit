@@ -23,7 +23,11 @@
                 <div class="row">
                     <div class="col-3">
                         {{ comment.author }} <small>{{ comment.createdAt | date('(d/m/Y à H:i)') }}</small>
-                        <a href="{{ path('comment_delete', {'id': comment.id}) }}" class="btn btn-danger">Supprimer</a>
+                        {% if app.user %}
+                            {% if comment.author == app.user.username %}
+                                <a href="{{ path('comment_delete', {'id': comment.id}) }}" class="btn btn-danger">Supprimer</a>
+                            {% endif %}
+                        {% endif %}
                     </div>
                     <div class="col">
                         {{ comment.content | raw }}
