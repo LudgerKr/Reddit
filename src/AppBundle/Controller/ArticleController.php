@@ -23,7 +23,7 @@ class ArticleController extends Controller
      */
     public function listArticleAction()
     {
-        $repository =$this->getDoctrine()->getRepository(Article::class);
+        $repository = $this->getDoctrine()->getRepository(Article::class);
         $articles = $repository->findAll();
         return $this->render('article/list.html.twig', [
             'controller_name' => 'ArticleController',
@@ -59,7 +59,8 @@ class ArticleController extends Controller
         }
 
         return $this->render('article/create.html.twig', [
-                'formArticle' => $form->createView(),
+            'formArticle' => $form->createView(),
+            'editMode' => $article->getId() !== null
         ]);
     }
 
@@ -70,7 +71,7 @@ class ArticleController extends Controller
      */
     public function showArticleAction(Article $article, Request $request)
     {
-        if($this->container->get( 'security.authorization_checker' )->isGranted( 'IS_AUTHENTICATED_FULLY')) {
+        if($this->container->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             $user = $this->container->get('security.token_storage')->getToken()->getUser();
             $username = $user->getUsername();
         }

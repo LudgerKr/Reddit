@@ -23,6 +23,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('article_list') }}">Articles</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('category_list') }}">Catégories</a>
+            </li>
             {%  if app.user %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('article_create') }}">Créer un article</a>
@@ -40,12 +43,10 @@
                 </li>
             {%  else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('logout') }}">LOG OUT</a>
+                    <a class="nav-link" href="{{ path('profile', {'id': app.user.getid}) }}">{{ app.user.username | capitalize }}</a>
                 </li>
-            {% endif %}
-            {% if app.user %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ app.user.username | capitalize }}</a>
+                    <a class="nav-link" href="{{ path('logout') }}">LOG OUT</a>
                 </li>
             {% endif %}
         </ul>

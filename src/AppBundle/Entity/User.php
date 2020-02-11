@@ -47,6 +47,17 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(name="bio", type="text", nullable=true)
+     */
+    private $bio;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Url()
+     */
+    private $image;
+
 
     /**
      * Get id
@@ -59,27 +70,19 @@ class User implements UserInterface
     }
 
     /**
-     * Set username
-     *
-     * @param string $username
-     *
-     * @return User
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
-     * Get username
-     *
      * @return string
      */
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 
     /**
@@ -130,6 +133,40 @@ class User implements UserInterface
         return $this->password;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getBio()
+    {
+        return $this->bio;
+    }
+
+    /**
+     * @param mixed $bio
+     */
+    public function setBio($bio)
+    {
+        $this->bio = $bio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+
+
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
@@ -145,4 +182,3 @@ class User implements UserInterface
     }
 
 }
-

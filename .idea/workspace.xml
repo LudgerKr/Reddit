@@ -2,10 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47717783-78e9-41d6-8d78-bab58d0d324a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/security/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Form/ProfileType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/article/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/article/create.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/article/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/article/list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/article/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/category/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/category/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/security/signup.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/security/signupeditprofile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/-/7/N-iS7IpIdUy07nv6wG+C" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/-/7/N-iS7IpIdUy07nv6wG+C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/0/I/HlPDjyMPu4JC492iDZMc" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/0/I/HlPDjyMPu4JC492iDZMc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/1/8/05Wo35wd-pR7zqGk7qS2" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/1/8/05Wo35wd-pR7zqGk7qS2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/5/0/vn3WBgAlwpVeLXuKQG4t" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/5/0/vn3WBgAlwpVeLXuKQG4t" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/5/Y/Alierr3TvtnK-wfWJiI+" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/5/Y/Alierr3TvtnK-wfWJiI+" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/6/A/Rr-jBbBUw-Qbj5GCmLWq" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/6/A/Rr-jBbBUw-Qbj5GCmLWq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/6/G/540DlCCP8WKD8M409TNr" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/6/G/540DlCCP8WKD8M409TNr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/9/F/UcGGvQx0szagJvysQ82v" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/9/F/UcGGvQx0szagJvysQ82v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/A/J/CNAwewR-jwJPJBqQ+1QY" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/A/J/CNAwewR-jwJPJBqQ+1QY" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/B/B/E1i4MxjChhmmzZH3RdEr" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/B/B/E1i4MxjChhmmzZH3RdEr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/C/O/lCyrol+pAON-B4RvUBMa" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/C/O/lCyrol+pAON-B4RvUBMa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/D/-/BUcIgUbiCqw-3NjoII5m" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/D/-/BUcIgUbiCqw-3NjoII5m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/D/T/cru9ODISypjgAzeBmyE4" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/D/T/cru9ODISypjgAzeBmyE4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/F/W/wXnedBHwGlfxnNcxvDGd" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/F/W/wXnedBHwGlfxnNcxvDGd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/G/6/bKEg5Xgv-S3zTiuSudJN" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/G/6/bKEg5Xgv-S3zTiuSudJN" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/G/C/RagozjnO4Esw0nTlCtN6" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/G/C/RagozjnO4Esw0nTlCtN6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/G/D/qp4L-WrC+zB2OAtT6EYU" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/G/D/qp4L-WrC+zB2OAtT6EYU" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/H/1/2gyzu4jPAjpLX+YtJ6d4" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/H/1/2gyzu4jPAjpLX+YtJ6d4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/H/S/+tl6a4Pd8QG-dTb7E8hD" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/H/S/+tl6a4Pd8QG-dTb7E8hD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/I/Q/kQKRQMdkeT4APNN+OrN1" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/I/Q/kQKRQMdkeT4APNN+OrN1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/I/R/cVBxK-geTbVQzCP6ENj6" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/I/R/cVBxK-geTbVQzCP6ENj6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/I/V/rkxv4HGuxO0oB2ZRyYcY" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/I/V/rkxv4HGuxO0oB2ZRyYcY" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/J/G/rnuoLFxwXHeIqH0fR6Nv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/J/G/rnuoLFxwXHeIqH0fR6Nv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/K/A/ezQz9rbpd7JsUcTMKCpM" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/K/A/ezQz9rbpd7JsUcTMKCpM" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/N/I/gwsIlhLL0bi94sSywiNv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/N/I/gwsIlhLL0bi94sSywiNv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/N/K/4DY01l1NMPd5Ii6Bjh3k" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/N/K/4DY01l1NMPd5Ii6Bjh3k" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/O/D/caN4Xs+2a591nRgzR5Z0" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/O/D/caN4Xs+2a591nRgzR5Z0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/O/P/w0Bx7UdYp8qlzqap05lo" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/O/P/w0Bx7UdYp8qlzqap05lo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/O/U/V70x7CZ2371J83NIGHEI" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/O/U/V70x7CZ2371J83NIGHEI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/O/Z/Zf4T+nIV5nwLaENWh+XS" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/O/Z/Zf4T+nIV5nwLaENWh+XS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/P/H/QeFRA4QlW7EVqWMjrAZq" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/P/H/QeFRA4QlW7EVqWMjrAZq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Q/3/16EblSCF7wfKSNRPd0RI" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Q/3/16EblSCF7wfKSNRPd0RI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Q/K/clrcp+Gm6DpO+SbZ42o8" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Q/K/clrcp+Gm6DpO+SbZ42o8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Q/K/fps6RbLrIZkkHO1M+UmQ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Q/K/fps6RbLrIZkkHO1M+UmQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/S/P/dpeI6IQtjtCv8TNq6cLZ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/S/P/dpeI6IQtjtCv8TNq6cLZ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/S/R/cZ-E4eCg-5vBZCj2NvNo" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/S/R/cZ-E4eCg-5vBZCj2NvNo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/T/Z/hUjUMrGHaXGV7wnWpBJo" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/T/Z/hUjUMrGHaXGV7wnWpBJo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/W/2/Z7584q8V9MzXuBAviDda" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/W/2/Z7584q8V9MzXuBAviDda" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/W/W/haFgsrBa5ejyztRNLNKm" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/W/W/haFgsrBa5ejyztRNLNKm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/X/J/qNc7X9SHjnKOeOMJmlAT" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/X/J/qNc7X9SHjnKOeOMJmlAT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Z/K/OGV6rYCRVAU6wBrl-3BB" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Z/K/OGV6rYCRVAU6wBrl-3BB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Z/O/H+um0u2XCyzSKDRwSg-b" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Z/O/H+um0u2XCyzSKDRwSg-b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Z/W/Ngf5gXpt4wM9DAWJm-iL" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/diMbZ5O8jB/Z/W/Ngf5gXpt4wM9DAWJm-iL" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
@@ -14,7 +73,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -76,8 +135,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/AppBundle/Form" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AppBundle/Form" />
+      <recent name="$PROJECT_DIR$/app/Resources/views/security" />
+      <recent name="$PROJECT_DIR$/app/Resources/views/profile" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Controller" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/app/Resources" />
@@ -105,11 +171,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581334102592</updated>
-      <workItem from="1581334106996" duration="3109000" />
+      <workItem from="1581334106996" duration="14276000" />
+      <workItem from="1581408424665" duration="420000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2675" y="274" key="#com.intellij.ide.util.MemberChooser" timestamp="1581350034790">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2675" y="274" key="#com.intellij.ide.util.MemberChooser/0.23.1920.977/1920.23.1920.1057@1920.23.1920.1057" timestamp="1581350034790" />
+    <state x="2618" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581349357390">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2618" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.977/1920.23.1920.1057@1920.23.1920.1057" timestamp="1581349357390" />
+    <state x="2020" y="123" width="1720" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581349470402">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2020" y="123" width="1720" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.977/1920.23.1920.1057@1920.23.1920.1057" timestamp="1581349470402" />
+    <state x="2573" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1581408430712">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2573" y="384" key="com.intellij.ide.util.TipDialog/0.23.1920.977/1920.23.1920.1057@1920.23.1920.1057" timestamp="1581408430712" />
+    <state x="2560" y="308" width="639" height="486" key="find.popup" timestamp="1581346404884">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2560" y="308" width="639" height="486" key="find.popup/0.23.1920.977/1920.23.1920.1057@1920.23.1920.1057" timestamp="1581346404884" />
   </component>
 </project>

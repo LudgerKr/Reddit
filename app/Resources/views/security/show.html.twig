@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reddit{% endblock %}
+
+{% block body %}
+
+    <div align="center">
+    <profile>
+        <h2>{{ user.username | capitalize }}</h2>
+        <img src= "{{ user.image }}" alt="">
+        <h4>email : {{ user.email }}</h4>
+        <h4>Bio : {{ user.bio }}</h4>
+    </profile>
+    <a href="{{ path('profile_edit', {'id': user.id}) }}" class="btn btn-primary">Modifier</a>
+</div>
+
+{% endblock %}

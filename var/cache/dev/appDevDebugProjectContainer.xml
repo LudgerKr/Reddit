@@ -522,6 +522,9 @@
     <service id="AppBundle\Form\CommentType" class="AppBundle\Form\CommentType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="AppBundle\Form\ProfileType" class="AppBundle\Form\ProfileType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="AppBundle\Form\UserType" class="AppBundle\Form\UserType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -541,7 +544,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.ty1ez5q"/>
+      <argument type="service" id="service_locator.uqwbq_k"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -794,6 +797,7 @@
         <argument>AppBundle\Form\ArticleType</argument>
         <argument>AppBundle\Form\CategoryType</argument>
         <argument>AppBundle\Form\CommentType</argument>
+        <argument>AppBundle\Form\ProfileType</argument>
         <argument>AppBundle\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1014,7 +1018,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.uf5xkf0"/>
+      <argument type="service" id="service_locator.rnskg.m"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3731,6 +3735,8 @@
     <service id="abstract.instanceof.AppBundle\Form\CategoryType" class="AppBundle\Form\CategoryType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\CommentType" class="AppBundle\Form\CommentType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\CommentType" class="AppBundle\Form\CommentType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\ProfileType" class="AppBundle\Form\ProfileType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Form\ProfileType" class="AppBundle\Form\ProfileType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\UserType" class="AppBundle\Form\UserType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\UserType" class="AppBundle\Form\UserType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="service_locator.aegztjt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -3745,29 +3751,29 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.cs87c3r" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection"/>
-    </service>
     <service id="service_locator.jwewuuw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="authenticationUtils" type="service" id="security.authentication_utils" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id="service_locator.dthvvjy" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.gw7dm_f" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id="service_locator.ty1ez5q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.q.d.0nc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.uqwbq_k" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Controller\SecurityController:loginAction" type="service" id="service_locator.jwewuuw"/>
-        <argument key="AppBundle\Controller\SecurityController:signUpAction" type="service" id="service_locator.dthvvjy"/>
+        <argument key="AppBundle\Controller\SecurityController:signUpEditProfileAction" type="service" id="service_locator.gw7dm_f"/>
         <argument key="AppBundle\Controller\SecurityController::loginAction" type="service" id="service_locator.jwewuuw"/>
-        <argument key="AppBundle\Controller\SecurityController::signUpAction" type="service" id="service_locator.dthvvjy"/>
+        <argument key="AppBundle\Controller\SecurityController::signUpEditProfileAction" type="service" id="service_locator.gw7dm_f"/>
       </argument>
     </service>
     <service id="service_locator.8vuqatr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -3789,12 +3795,13 @@
         <argument key="inline" type="service" id="fragment.renderer.inline"/>
       </argument>
     </service>
-    <service id="service_locator.uf5xkf0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.rnskg.m" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Form\ArticleType" type="service" id="AppBundle\Form\ArticleType"/>
         <argument key="AppBundle\Form\CategoryType" type="service" id="AppBundle\Form\CategoryType"/>
         <argument key="AppBundle\Form\CommentType" type="service" id="AppBundle\Form\CommentType"/>
+        <argument key="AppBundle\Form\ProfileType" type="service" id="AppBundle\Form\ProfileType"/>
         <argument key="AppBundle\Form\UserType" type="service" id="AppBundle\Form\UserType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>

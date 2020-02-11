@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\ProfileType;
 use AppBundle\Form\UserType;
 use AppBundle\Entity\User;
 use AppBundle\Helper\Auth;
@@ -11,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller
@@ -27,19 +29,22 @@ class SecurityController extends Controller
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
         return $this->render(
-            'security/signup.html.twig',[
+            'security/signupeditprofile.html.twig',[
             'formUser' => $form->createView()]);
     }
 
     /**
      * @Route("/signup", name="signup")
+     * @Route("/profile/edit/{id}", name="profile_edit")
      */
-    public function signUpAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    public function signUpEditProfileAction(User $user = null, Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
-        // 1) build the form
-        $user = new User();
-        $form = $this->createForm(UserType::class, $user);
-
+        if(!$user) {
+            $user = new User();
+            $form = $this->createForm(UserType::class, $user);
+        } else {
+            $form = $this->createForm(ProfileType::class, $user);
+        }
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -59,10 +64,26 @@ class SecurityController extends Controller
             return $this->redirectToRoute('home');
         }
 
-        return $this->render(
-            'security/signup.html.twig',[
-            'formUser' => $form->createView()]);
-        return $this->redirectToRoute('home');
+        return $this->render('security/signupeditprofile.html.twig',[
+            'formUser' => $form->createView(),
+            'editMode' => $user->getId() !== null
+        ]);
+
+    }
+
+    /**
+     * @Route("/profile/{id}", name="profile")
+     */
+    public function getProfileAction(Request $request, User $user)
+    {
+        $id = $user->getId();
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $profile = $repository->findOneBy(['id' => $id]);
+
+        return $this->render('security/show.html.twig', [
+            'id' => $id,
+            'user' => $profile
+        ]);
     }
 
     /**

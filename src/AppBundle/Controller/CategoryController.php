@@ -19,10 +19,11 @@ class CategoryController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route ("/category_list", name="category_list")
      */
-    public function listCategoryAction(CategoryRepository $repository)
+    public function listCategoryAction()
     {
+        $repository = $this->getDoctrine()->getRepository(Category::class);
         $categories = $repository->findAll();
-        return $this->render('categorie/list.html.twig', [
+        return $this->render('category/list.html.twig', [
             'controller_name' => 'CategoryController',
             'categories' => $categories,
         ]);

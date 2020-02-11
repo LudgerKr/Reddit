@@ -174,12 +174,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         if (0 === strpos($pathinfo, '/signup')) {
             // signup
             if ('/signup' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::signUpAction',  '_route' => 'signup',);
+                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::signUpEditProfileAction',  '_route' => 'signup',);
             }
 
             // user_registration
             if ('/signup' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::signupAction',  '_route' => 'user_registration',);
+            }
+
+        }
+
+        elseif (0 === strpos($pathinfo, '/profile')) {
+            // profile_edit
+            if (0 === strpos($pathinfo, '/profile/edit') && preg_match('#^/profile/edit/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'profile_edit']), array (  '_controller' => 'AppBundle\\Controller\\SecurityController::signUpEditProfileAction',));
+            }
+
+            // profile
+            if (preg_match('#^/profile/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'profile']), array (  '_controller' => 'AppBundle\\Controller\\SecurityController::getProfileAction',));
             }
 
         }

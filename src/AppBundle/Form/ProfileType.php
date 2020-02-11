@@ -10,21 +10,22 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\SubmitButton;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UserType extends AbstractType
+class ProfileType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username')
+        $builder
             ->add('email')
-            ->add('image')
-            ->add('password',RepeatedType::class, [
+            ->add('image', null, ['required' => false])
+            ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'first_options'  => ['label' => 'Password'],
                 'second_options' => ['label' => 'Repeat Password'],
                 'invalid_message'   => 'Les mots de passe ne sont pas identiques',
+                'required' => false
             ])
             ->add('bio')
         ;

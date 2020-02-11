@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reddit{% endblock %}
+
+{% form_theme formUser 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    {{ form_start(formUser) }}
+        {{ form_row(formUser.username) }}
+        {{ form_row(formUser.image) }}
+        {{ form_row(formUser.email) }}
+        {{ form_row(formUser.password.first) }}
+        {{ form_row(formUser.password.second) }}
+        {{ form_row(formUser.bio) }}
+        {% if editMode %}
+            <button type="submit" class="btn btn-success">Modifier</button>
+        {% else %}
+            <button type="reset" class="btn btn-info">Annuler</button>
+            <button type="submit" class="btn btn-success">S'inscrire</button>
+        {% endif %}
+    {{ form_end(formUser) }}
+
+{% endblock %}
