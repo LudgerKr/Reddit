@@ -17,7 +17,7 @@ class ProfileType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
+        $builder->add('username')
             ->add('email')
             ->add('image', null, ['required' => false])
             ->add('password', RepeatedType::class, [

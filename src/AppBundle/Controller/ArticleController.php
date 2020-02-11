@@ -49,7 +49,7 @@ class ArticleController extends Controller
 
         if($form->isSubmitted() && $form->isValid()) {
             $article->setCreatedAt(new \DateTime());
-            $article->setAuthor($user->getUsername());
+            $article->setAuthor($user);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);

@@ -30,9 +30,8 @@ class Article
     private $title;
 
     /**
-     * @var $author
-     * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min=5, max=255)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $author;
 
@@ -86,27 +85,6 @@ class Article
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
-     * @param string $author
-     */
-    public function setAuthor($author)
-    {
-        $this->author = $author;
-    }
-
-    public function getContent(): ?string
-    {
-        return $this->content;
-    }
-
     public function setContent(string $content): self
     {
         $this->content = $content;
@@ -148,6 +126,24 @@ class Article
         $this->category = $category;
 
         return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $user): self
+    {
+        $this->author = $user;
+
+        return $this;
+    }
+
+
+    public function getContent(): ?string
+    {
+        return $this->content;
     }
 
     /**
